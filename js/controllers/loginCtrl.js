@@ -11,17 +11,26 @@ angular.module('appmain') // definimos un Controlador
         }
         console.log("quiero agregar usuario")
         login_service.addUsuario(user);
+        $location.path("/login")
     }
 
     $scope.loguear= function(){
         $scope.ListUsers = login_service.getUsuarios();
         console.log($scope.ListUsers.length)
-        for (let i = 0; i<$scope.ListUsers.length; i++){
-            if ($scope.username == $scope.ListUsers[i].username && $scope.password == $scope.ListUsers[i].password){
-                console.log("admin");
-                $location.path('/productos');
+        if ($scope.username == "admin"&& $scope.password == "admin"){
+            console.log("es el admin")
+            $location.path("/admin")
+        }else{
+            for (let i = 0; i<$scope.ListUsers.length; i++){
+                if ($scope.username == $scope.ListUsers[i].username && $scope.password == $scope.ListUsers[i].password){
+                    console.log("es usuario");
+                    $location.path('/productos');
+                }
             }
         }
+    }
 
+    $scope.getAllUsers = function(){
+        $scope.ListUsers = login_service.getUsuarios();
     }
 }])

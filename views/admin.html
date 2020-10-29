@@ -1,0 +1,12 @@
+<h1>Bienvenido Admin</h1>
+<div style="background-color: green;color: white;">
+    <b>Lista de Usuarios:</b><hr />
+    <li ng-repeat="user in ListUsers">
+        <h3>Username: <b>{{user.username}}</b></h3>
+        <h4>password: <b>{{user.password}}</b></h4> 
+    </li>
+     
+ </div>
+ <button ng-click="getAllUsers()">Obtener lista de usuarios</button>
+ <a href="#!/add_product">Agregar Producto</a>
+ <a type = "button" href="#!/products_admin" ng-click="obtener()">Ver Productos</a>

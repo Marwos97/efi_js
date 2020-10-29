@@ -1,8 +1,9 @@
 angular.module('appmain') // definimos un Controlador
 
-.controller('control_producto',['$scope','producto_service', function($scope, produc_service){ // definimos un controlador
+.controller('control_producto',['$scope', '$location','producto_service', function($scope, $location, produc_service){ // definimos un controlador
     console.log('Iniciando producto_service');
-    $scope.ListProducts = 'Lista Vacia';
+    $scope.ListProducts = '';
+    $scope.buscado = '';
     $scope.agregar= function(){
         let product = {
             codigo: $scope.codigo,
@@ -14,18 +15,21 @@ angular.module('appmain') // definimos un Controlador
             is_active: $scope.is_active
         }
         produc_service.addProducto(product);
+        $location.path("/admin")
     }
 
     $scope.obtener= function(){
-        $scope.ListProducts = produc_service.getProductos();       
+        $scope.ListProducts = produc_service.getProductos();    
     }
 
+    $scope.delete=function(){
+        produc_service.deleteProducto($scope.nombre_delete);
+    }
 
-
-    console.log('Iniciando controlador ', produc_service.getProductos());
-
-    
-    
-    
+    $scope.buscar=function(){
+        $scope.ListProducts = [];
+        $scope.ListProducts = produc_service.buscarProducto($scope.nombre_buscar);
+        console.log($scope.buscado);
+    }
 
 }])

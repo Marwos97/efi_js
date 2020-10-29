@@ -1,0 +1,20 @@
+<div style="background-color: blue;color: white;" ng-init = "obtener()">
+    <b>Lista de Productos:</b><hr/>
+    <li ng-repeat="producto in ListProducts track by $index">
+        <h3>Nombre: <b>{{producto.nombre}}</b></h3>
+        <h4>Precio: <b>{{producto.precio}}</b></h4>
+        <p>Detalle: {{producto.detalle}}</p>
+        <p>Codigo: {{producto.codigo}}</p>
+        <p>Stock Minimo: {{producto.stock_min}}</p>
+        <p>Stock Maximo: {{producto.stock_max}}</p>
+        <p>Activo: {{prodtive}}<ucto.is_ac/p>
+    </li>
+ </div>
+
+ <button ng-click="obtener()">refresh</button><br>
+
+ <input type="text" class="form-control" ng-model="nombre_delete"><br>
+ <button ng-click="delete()">delete</button><br>
+
+ <button ng-click="buscar()">buscar</button><br>
+ <input type="text" class="form-control" ng-model="nombre_buscar"><br>
