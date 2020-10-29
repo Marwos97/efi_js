@@ -1,0 +1,17 @@
+<div style="background-color: blue;color: white;">
+    <b>Lista de Mensajes:</b><hr />
+    <li ng-repeat="producto in ListProducts">
+        <h3>Nombre: <b>{{producto.nombre}}</b></h3>
+        <h4>Precio: <b>{{producto.precio}}</b></h4>
+        <p>Detalle: {{producto.detalle}}</p>
+        <p>Codigo: {{producto.codigo}}</p>
+        <p>Stock Minimo: {{producto.stock_min}}</p>
+        <p>Stock Maximo: {{producto.stock_max}}</p>
+        <p>Activo: {{producto.is_active}}</p>
+    </li>
+     
+ </div>
+ <button ng-click="obtener()">Obtener Mensaje</button>
+
+ 
+<a href="#!/">Home</a>

@@ -1,0 +1,42 @@
+<h1>Agregar un producto</h1> 
+
+<div >
+    <form >
+        <div class="form-group">
+            <label for="exampleInputEmail1">Codigo</label>
+            <input type="text" class="form-control" ng-model="codigo" placeholder="1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Nombre</label>
+            <input type="text" class="form-control" ng-model="nombre"> 
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Detalle</label>
+            <input type="text" class="form-control" ng-model="detalle">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Precio</label>
+            <input type="number" class="form-control" ng-model="precio">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Stock minimo</label>
+            <input type="number" class="form-control" ng-model="stock_min">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Stock Maximo</label>
+            <input type="number" class="form-control" ng-model="stock_max">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Active</label>
+            <input type="checkbox" class="form-control"ng-model="is_active">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="agregar()">Agregar producto</button>
+        </form>
+</div>
+
+
+
+
+
+
+<a href="#!/">Home</a>
