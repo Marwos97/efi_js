@@ -1,5 +1,5 @@
 <div style="background-color: blue;color: white;">
-    <b>Lista de Mensajes:</b><hr />
+    <b>Lista de Productos:</b><hr />
     <li ng-repeat="producto in ListProducts">
         <h3>Nombre: <b>{{producto.nombre}}</b></h3>
         <h4>Precio: <b>{{producto.precio}}</b></h4>
@@ -12,3 +12,14 @@
      
  </div>
  <button ng-click="obtener()">Obtener Mensaje</button>
+
+
+ 
+ <input type="text" class="form-control" ng-model="nombre_delete">
+ <button ng-click="delete()">delete</button>
+
+
+ <input type="text" class="form-control" ng-model="nombre_buscar">
+ <button ng-click="buscar()">buscar</button>
+
+ {{buscado}}

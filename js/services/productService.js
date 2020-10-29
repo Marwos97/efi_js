@@ -21,11 +21,28 @@ angular.module('appmain') // obtenemos la referencia al modulo principal
         getProductos: function () {
             return productos;
         },
+
         addProducto: function (msg) {
             productos.push(msg);
             window.localStorage.setItem('productos',JSON.stringify(productos));
-
         },
+
+        deleteProducto: function(product){
+            for (let i = 0;i < productos.length; i++ ){
+                if (product == productos[i].nombre){
+                    productos.splice(i,1);
+                    window.localStorage.setItem('productos',JSON.stringify(productos));
+                }
+            }
+        },
+
+        buscarProducto: function(product){
+            for (let i = 0;i < productos.length; i++ ){
+                if (product == productos[i].nombre){
+                    return productos[i] ;
+                }
+            }
+        }
     }
 });
 

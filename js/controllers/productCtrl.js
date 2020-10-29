@@ -3,6 +3,7 @@ angular.module('appmain') // definimos un Controlador
 .controller('control_producto',['$scope','producto_service', function($scope, produc_service){ // definimos un controlador
     console.log('Iniciando producto_service');
     $scope.ListProducts = 'Lista Vacia';
+    $scope.buscado = 'Lista Vacia';
     $scope.agregar= function(){
         let product = {
             codigo: $scope.codigo,
@@ -20,12 +21,14 @@ angular.module('appmain') // definimos un Controlador
         $scope.ListProducts = produc_service.getProductos();       
     }
 
+    $scope.delete=function(){
+        produc_service.deleteProducto($scope.nombre_delete);
+    }
 
+    $scope.buscar=function(){
+        $scope.buscado = produc_service.buscarProducto($scope.nombre_buscar);
+    }
 
     console.log('Iniciando controlador ', produc_service.getProductos());
-
-    
-    
-    
 
 }])
