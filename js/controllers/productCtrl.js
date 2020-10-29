@@ -1,6 +1,6 @@
 angular.module('appmain') // definimos un Controlador
 
-.controller('control_producto',['$scope','producto_service', function($scope, produc_service){ // definimos un controlador
+.controller('control_producto',['$scope', '$location','producto_service', function($scope, $location, produc_service){ // definimos un controlador
     console.log('Iniciando producto_service');
     $scope.ListProducts = 'Lista Vacia';
     $scope.buscado = 'Lista Vacia';
@@ -15,6 +15,7 @@ angular.module('appmain') // definimos un Controlador
             is_active: $scope.is_active
         }
         produc_service.addProducto(product);
+        $location.path("/admin")
     }
 
     $scope.obtener= function(){
