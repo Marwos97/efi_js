@@ -27,7 +27,7 @@ angular.module('appmain',['ngRoute']) // definimos un modulo
           templateUrl: "views/products_admin.html"
         })
         .when('/home', {
-          controller: "homeCtrl",
+          controller: "control_login",
           templateUrl: "views/home.html"
         })
       .otherwise({

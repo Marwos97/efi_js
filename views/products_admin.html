@@ -1,20 +1,27 @@
-<div style="background-color: blue;color: white;" ng-init = "obtener()">
-    <b>Lista de Productos:</b><hr/>
-    <li ng-repeat="producto in ListProducts track by $index">
-        <h3>Nombre: <b>{{producto.nombre}}</b></h3>
-        <h4>Precio: <b>{{producto.precio}}</b></h4>
-        <p>Detalle: {{producto.detalle}}</p>
-        <p>Codigo: {{producto.codigo}}</p>
-        <p>Stock Minimo: {{producto.stock_min}}</p>
-        <p>Stock Maximo: {{producto.stock_max}}</p>
-        <p>Activo: {{prodtive}}<ucto.is_ac/p>
-    </li>
+<div style="background-color: blue;color: white;" ng-init = "obtener()" class="container">
+    <button ng-click="obtener()" class="btn btn-block">Refrescar Productos</button><br>
+    <b>Lista de Productos:</b><hr />
+        <div class="row" style="padding-top: 2px;" ng-repeat="producto in ListProducts">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title fuente4" style="color: black;"><b>{{producto.nombre}}</b></h5>
+                        <p class="card-text fuente2" style="color: black">Precio: <b>{{producto.precio}}</p>
+                        <p class="card-text fuente2"style="color: black">Detalle: {{producto.detalle}}</p>
+                        <p class="card-text fuente2"style="color: black">Codigo: {{producto.codigo}}</p>
+                        <p class="card-text fuente2"style="color: black">Stock Minimo: {{producto.stock_min}}</p>
+                        <p class="card-text fuente2"style="color: black">Stock Maximo: {{producto.stock_max}}</p>
+                    </div>
+                </div>
+            </div>
+     </div>
+     <hr>
+    <input type="text" class="form-control" ng-model="nombre_delete" placeholder="Nombre Producto a borrar"><br>
+    <button ng-click="delete()" class="btn btn-danger">delete</button><br><hr>
+    
+    <input type="text" class="form-control" ng-model="nombre_buscar"><br>
+    <button ng-click="buscar()" class="btn btn-primary">buscar</button><br>
+    <a href="#!/admin" class="btn" style="padding-left: 45%; color: black;">Volver a ADM</a>
  </div>
 
- <button ng-click="obtener()">refresh</button><br>
-
- <input type="text" class="form-control" ng-model="nombre_delete"><br>
- <button ng-click="delete()">delete</button><br>
-
- <button ng-click="buscar()">buscar</button><br>
- <input type="text" class="form-control" ng-model="nombre_buscar"><br>
+ 

@@ -4,8 +4,11 @@ angular.module('appmain') // definimos un Controlador
     console.log('Iniciando producto_service');
     $scope.ListProducts = '';
     $scope.buscado = '';
+    $scope.ListProducts = produc_service.getProductos();
+    $n = $scope.ListProducts.length
     $scope.agregar= function(){
         let product = {
+            id: $n+1,
             codigo: $scope.codigo,
             nombre: $scope.nombre,
             detalle: $scope.detalle,
@@ -19,7 +22,7 @@ angular.module('appmain') // definimos un Controlador
     }
 
     $scope.obtener= function(){
-        $scope.ListProducts = produc_service.getProductos();    
+        $scope.ListProducts = produc_service.getProductos();
     }
 
     $scope.delete=function(){
