@@ -1,12 +1,18 @@
-<h1>Bienvenido Admin</h1>
+<h1 class="badge badge-secondary" style="font-size: 40px;">Bienvenido Admin</h1>
+<a class="btn btn-warning" ng-click="logout()">Logout</a>
 <div style="background-color: green;color: white;">
     <b>Lista de Usuarios:</b><hr />
-    <li ng-repeat="user in ListUsers">
-        <h3>Username: <b>{{user.username}}</b></h3>
-        <h4>password: <b>{{user.password}}</b></h4> 
-    </li>
-     
+    <table class="table">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+        </tr>
+        <tr ng-repeat="user in ListUsers">
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+
+    </table>
  </div>
- <button ng-click="getAllUsers()">Obtener lista de usuarios</button>
- <a href="#!/add_product">Agregar Producto</a>
- <a type = "button" href="#!/products_admin" ng-click="obtener()">Ver Productos</a>
+ <a href="#!/add_product" class="btn btn-dark">Agregar Producto</a>
+ <a type = "button" href="#!/products_admin" ng-click="obtener()" class="btn btn-dark">Ver Productos</a>

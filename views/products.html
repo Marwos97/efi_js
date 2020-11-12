@@ -1,20 +1,54 @@
-<div style="background-color: blue;color: white;">
-    <b>Lista de Productos:</b><hr />
-    <li ng-repeat="producto in ListProducts">
-        <h3>Nombre: <b>{{producto.nombre}}</b></h3>
-        <h4>Precio: <b>{{producto.precio}}</b></h4>
-        <p>Detalle: {{producto.detalle}}</p>
-        <p>Codigo: {{producto.codigo}}</p>
-        <p>Stock Minimo: {{producto.stock_min}}</p>
-        <p>Stock Maximo: {{producto.stock_max}}</p>
-        <p>Activo: {{producto.is_active}}</p>
-    </li>
-     
- </div>
- <button ng-click="obtener()">Obtener Mensaje</button>
+<header class="header fadeInDown">
+    <div class="bg-dark">
+        <div class="container">
+            <!--Navbar-->
+            <nav class="navbar navbar-light light-blue lighten-4">
+                <!-- Navbar brand -->
+                <!-- Collapse button -->
+                <button class="btn btn-primary btn-block  toggler-example fuente1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+                    class="fas fa-bars fa-1x"></i></span >Menu</button>
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                        <a class="nav-link fuente1" href="#!/home" id="productosHombres">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                        <a class="nav-link fuente1" href="#" ng-click = logout()>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+                </div>
+                <!-- Collapsible content -->
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="container fadeInUp" ng-init = "obtener()"">
+    <div>
+        <b>Lista de Productos:</b><hr />
+        <input type="text" class="form-control" ng-model="nombre_buscar">
+        <button ng-click="buscar()">buscar</button>
+        <div class="row" style="padding-top: 2px;" ng-repeat="producto in ListProducts">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="img/botin1.jpeg" alt="Card image cap" style="width: 300px;">
+                        <h5 class="card-title fuente4"><b>{{producto.nombre}}</b></h5>
+                        <p class="card-text fuente2" style="color: black">Precio: <b>{{producto.precio}}</p>
+                        <p class="card-text fuente2"style="color: black">Detalle: {{producto.detalle}}</p>
+                        <p class="card-text fuente2"style="color: black">Codigo: {{producto.codigo}}</p>
+                        <p class="card-text fuente2"style="color: black">Stock Minimo: {{producto.stock_min}}</p>
+                        <p class="card-text fuente2"style="color: black">Stock Maximo: {{producto.stock_max}}</p>
+                        <a href="#" class="btn btn-primary btn-lg" id="comprar1">Comprar</a>
+                    </div>
+                </div>
+            </div>
+     </div>
+</div>
 
- <input type="text" class="form-control" ng-model="nombre_buscar">
- <button ng-click="buscar()">buscar</button>
 
  <a href="#!/home">Home</a>
 
