@@ -2,7 +2,7 @@
     <br>
     <button ng-click="obtener()" class="btn btn-block">Refrescar Productos</button><br>
     <div class = "container" style = "display: flex;">
-        <div class = "col-6" style="display: flex;">
+        <div class = "col-6" style="display: flex;" >
             <input type="text" class="form-control" ng-model="nombre_delete" placeholder="id del Producto a borrar"><br>
             <button ng-click="delete()" class="btn btn-danger">delete</button><br><hr>
         </div>
@@ -21,7 +21,6 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Detalle</th>
-                    <th scope="col">Codigo</th>
                     <th scope="col">Stock Minimo</th>
                     <th scope="col">Stock Maximo</th>
                 </tr>
@@ -32,7 +31,6 @@
                     <th >{{producto.nombre}}</th>
                     <th >{{producto.precio}}</th>
                     <th >{{producto.detalle}}</th>
-                    <th >{{producto.codigo}}</th>
                     <th >{{producto.stock_min}}</th>
                     <th >{{producto.stock_max}}</th>
                 </tr>
