@@ -1,16 +1,22 @@
-<h1>Ingresa a Sports Kawai</h1> 
-<div >
-    <form >
-        <div class="form-group">
-            <label for="exampleInputPassword1">Username</label>
-            <input type="text" class="form-control" ng-model="username"> 
+<div class = "container">
+    <center>
+        <hr>
+        <h1>Ingresa a Sports Kawai</h1> 
+        <hr>
+        <div class = "col-lg-6">
+            <form >
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Username</label>
+                    <input type="text" class="form-control" ng-model="username"> 
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="text" class="form-control" ng-model="password">
+                </div>
+                <button type="submit" class="btn btn-primary" ng-click="loguear()">Login</button>
+                </form>
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="text" class="form-control" ng-model="password">
-        </div>
-        <button type="submit" class="btn btn-primary" ng-click="loguear()">Login</button>
-        </form>
+        <hr>
+        <a href="#!/add_user" class="btn btn-dark">Crear Usuario</a>
+    </center>
 </div>
-<hr>
-<a href="#!/add_user" class="btn btn-dark">Crear Usuario</a>

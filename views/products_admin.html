@@ -1,26 +1,44 @@
 <div style="background-color: blue;color: white;" ng-init = "obtener()" class="container">
+    <br>
     <button ng-click="obtener()" class="btn btn-block">Refrescar Productos</button><br>
-    <b>Lista de Productos:</b><hr />
-        <div class="row" style="padding-top: 2px;" ng-repeat="producto in ListProducts">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title fuente4" style="color: black;"><b>{{producto.nombre}}</b></h5>
-                        <p class="card-text fuente2" style="color: black">Precio: <b>{{producto.precio}}</p>
-                        <p class="card-text fuente2"style="color: black">Detalle: {{producto.detalle}}</p>
-                        <p class="card-text fuente2"style="color: black">Codigo: {{producto.codigo}}</p>
-                        <p class="card-text fuente2"style="color: black">Stock Minimo: {{producto.stock_min}}</p>
-                        <p class="card-text fuente2"style="color: black">Stock Maximo: {{producto.stock_max}}</p>
-                    </div>
-                </div>
-            </div>
-     </div>
-     <hr>
-    <input type="text" class="form-control" ng-model="nombre_delete" placeholder="Nombre Producto a borrar"><br>
-    <button ng-click="delete()" class="btn btn-danger">delete</button><br><hr>
-    
-    <input type="text" class="form-control" ng-model="nombre_buscar"><br>
-    <button ng-click="buscar()" class="btn btn-primary">buscar</button><br>
+    <div class = "container" style = "display: flex;">
+        <div class = "col-6" style="display: flex;">
+            <input type="text" class="form-control" ng-model="nombre_delete" placeholder="id del Producto a borrar"><br>
+            <button ng-click="delete()" class="btn btn-danger">delete</button><br><hr>
+        </div>
+        <div class = "col-6" style = "display: flex;">
+            <input type="text" class="form-control" ng-model="nombre_buscar" placeholder="Nombre de producto a buscar"><br>
+            <button ng-click="buscar()" class="btn btn-primary">buscar</button><br>
+        </div>
+    </div>
+    <hr>
+    <h3>Lista de Productos:</h3>
+    <hr>
+        <table class="table table-borderless table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Stock Minimo</th>
+                    <th scope="col">Stock Maximo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="card-body" ng-repeat="producto in ListProducts">
+                    <th >{{producto.id}}</th>
+                    <th >{{producto.nombre}}</th>
+                    <th >{{producto.precio}}</th>
+                    <th >{{producto.detalle}}</th>
+                    <th >{{producto.codigo}}</th>
+                    <th >{{producto.stock_min}}</th>
+                    <th >{{producto.stock_max}}</th>
+                </tr>
+            </tbody>
+        </table>
+    <hr>
     <a href="#!/admin" class="btn" style="padding-left: 45%; color: black;">Volver a ADM</a>
  </div>
 

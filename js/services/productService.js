@@ -31,7 +31,7 @@ angular.module('appmain') // obtenemos la referencia al modulo principal
 
         deleteProducto: function(product){
             for (let i = 0;i < productos.length; i++ ){
-                if (product == productos[i].nombre){
+                if (product == productos[i].id){
                     productos.splice(i,1);
                     window.localStorage.setItem('productos',JSON.stringify(productos));
                 }
