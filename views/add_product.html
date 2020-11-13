@@ -1,43 +1,27 @@
-<h1>Agregar un producto</h1> 
+<center>
+    <h1>Agregar un producto</h1> 
+</center>
 
-<div >
+
+<div class = "container">
     <form >
+        <input class="form-control" type="text" placeholder="Codigo" ng-model = "codigo">
+        <br>
+        <input class="form-control" type="text" placeholder="Nombre" ng-model = "nombre" >
+        <br>
+        <input class="form-control" type="text" placeholder="Detalle" ng-model="detalle">
+        <br>
+        <input class="form-control" type="text" placeholder="Precio" ng-model="precio">
+        <br>
+        <input class="form-control" type="text" placeholder="Stock-Min" ng-model="stock_min">
+        <br>
+        <input class="form-control" type="text" placeholder="Stock-Max" ng-model="stock_max">
+        <br>
         <div class="form-group">
-            <label for="exampleInputEmail1">Codigo</label>
-            <input type="text" class="form-control" ng-model="codigo" placeholder="1">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Nombre</label>
-            <input type="text" class="form-control" ng-model="nombre"> 
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Detalle</label>
-            <input type="text" class="form-control" ng-model="detalle">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Precio</label>
-            <input type="number" class="form-control" ng-model="precio">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Stock minimo</label>
-            <input type="number" class="form-control" ng-model="stock_min">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Stock Maximo</label>
-            <input type="number" class="form-control" ng-model="stock_max">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Active</label>
+            <label for="exampleInputPassword1">¿Active?</label>
             <input type="checkbox" class="form-control"ng-model="is_active">
         </div>
-        <button type="submit" class="btn btn-primary" ng-click="agregar()">Agregar producto</button>
         </form>
 </div>
 <hr>
-
-
-
-
-
-
 <a href="#!/admin" class="btn btn-dark btn-block">Regresar a admin</a>

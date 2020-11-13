@@ -2,7 +2,7 @@ angular.module('appmain')
 
 .service('login_service', function(){
     console.log(' Iniciando Servicio de Login');
-    let usuarios=[{id: 1, username:"admin", password:"admin"}];
+    let usuarios=[{id: 1, username:"admin", password:"password123"}];
     let current_user = {id: 0, username: 0}
 
     if (window.localStorage.getItem('usuarios'))

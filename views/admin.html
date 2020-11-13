@@ -1,18 +1,24 @@
-<h1 class="badge badge-secondary" style="font-size: 40px;">Bienvenido Admin</h1>
-<a class="btn btn-warning" ng-click="logout()">Logout</a>
-<div style="background-color: green;color: white;">
-    <b>Lista de Usuarios:</b><hr />
-    <table class="table">
-        <tr>
-            <th scope="col">Username</th>
-            <th scope="col">Password</th>
-        </tr>
-        <tr ng-repeat="user in ListUsers">
-            <td>{{user.username}}</td>
-            <td>{{user.password}}</td>
-        </tr>
-
+<div class = "container">
+    <center>
+        <h1 class="badge badge-secondary" style="font-size: 40px;">Bienvenido Admin</h1>
+        <a class="btn btn-warning" ng-click="logout()" style = "margin-left: 150px;">Logout</a>
+    </center>
+    <table class="table table-borderless table-hover table-dark">
+        <b>Lista de Usuarios:</b><hr />
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in ListUsers">
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </tbody>
     </table>
+    <a type = "button" href="#!/add_product" class="btn btn-dark">Agregar Producto</a>
+    <a type = "button" href="#!/products_admin" ng-click="obtener()" class="btn btn-dark">Ver Productos</a>
  </div>
- <a href="#!/add_product" class="btn btn-dark">Agregar Producto</a>
- <a type = "button" href="#!/products_admin" ng-click="obtener()" class="btn btn-dark">Ver Productos</a>
+ 
