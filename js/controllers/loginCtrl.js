@@ -22,20 +22,17 @@ angular.module('appmain') // definimos un Controlador
     $scope.loguear= function(){
         $scope.ListUsers = login_service.getUsuarios();
         console.log($scope.ListUsers.length)
-        if ($scope.username == "admin"&& $scope.password == "admin"){
-            console.log("es el admin")
-            $current = {id: 1, username: "admin"};
-            login_service.setCurrentUser($current);
-            $location.path("/admin")
-        }else{
-            for (let i = 0; i<$scope.ListUsers.length; i++){
-                if ($scope.username == $scope.ListUsers[i].username && $scope.password == $scope.ListUsers[i].password){
-                    $current = {id: $scope.ListUsers[i].id, username: $scope.ListUsers[i].username};
-                    login_service.setCurrentUser($current);
-                    $location.path('/home');
-                }
+        for (let i = 0; i<$scope.ListUsers.length; i++){
+            if ($scope.username == $scope.ListUsers[i].username && $scope.password == $scope.ListUsers[i].password && $scope.username != "admin"){
+                $current = {id: $scope.ListUsers[i].id, username: $scope.ListUsers[i].username};
+                login_service.setCurrentUser($current);
+                $location.path('/home');
+            }else if($scope.username == $scope.ListUsers[i].username && $scope.username == "admin" &&  $scope.ListUsers[i].id == 1 && $scope.password == $scope.ListUsers[i].password){
+                $current = {id: $scope.ListUsers[i].id, username: $scope.ListUsers[i].username};
+                login_service.setCurrentUser($current);
+                $location.path('/admin');
             }
-        }
+        }     
     }
 
     $scope.getAllUsers = function(){
@@ -43,7 +40,6 @@ angular.module('appmain') // definimos un Controlador
     }
 
     $scope.logout = function(){
-        console.log("hola")
         $current_user = {id:0, username:0};
         login_service.setCurrentUser($current_user);
         $location.path('/login');

@@ -5,22 +5,23 @@
 
 <div class = "container">
     <form >
-        <input class="form-control" type="text" placeholder="Codigo" ng-model = "codigo">
+        <input class="form-control" type="number" placeholder="Codigo" ng-model = "codigo">
         <br>
         <input class="form-control" type="text" placeholder="Nombre" ng-model = "nombre" >
         <br>
         <input class="form-control" type="text" placeholder="Detalle" ng-model="detalle">
         <br>
-        <input class="form-control" type="text" placeholder="Precio" ng-model="precio">
+        <input class="form-control" type="number" placeholder="Precio" ng-model="precio">
         <br>
-        <input class="form-control" type="text" placeholder="Stock-Min" ng-model="stock_min">
+        <input class="form-control" type="number" placeholder="Stock-Min" ng-model="stock_min">
         <br>
-        <input class="form-control" type="text" placeholder="Stock-Max" ng-model="stock_max">
+        <input class="form-control" type="number" placeholder="Stock-Max" ng-model="stock_max">
         <br>
         <div class="form-group">
             <label for="exampleInputPassword1">¿Active?</label>
             <input type="checkbox" class="form-control"ng-model="is_active">
         </div>
+        <button ng-click="agregar()" class="btn btn-primary">Agregar Producto</button>
         </form>
 </div>
 <hr>
